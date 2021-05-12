@@ -4,7 +4,7 @@ nome e
 peso.
 Stampare a schermo la bici con peso minore utilizzando destructuring e template literal */
 
-let parco = [
+/* let parco = [
     {
         'nome': 'bottecchia',
         'peso': 6
@@ -19,11 +19,23 @@ let parco = [
     }
 ];
 
-let [,{peso}] = parco;
 
-let stampa = document.getElementById('bici');
+let biciLeggera = parco[0];
 
-stampa.insertAdjacentHTML('beforeend',`<p>${peso}</p>`);
+for(var i = 0; i < parco.length; i++){
+
+    let bici = parco[i];
+
+    if( bici.peso < biciLeggera.peso){
+        biciLeggera = bici;     
+    }
+}
+console.log(biciLeggera);
+
+let {nome,peso} = biciLeggera;
+let stampa = document.getElementById('bici').insertAdjacentHTML('beforeend',`<p>${nome} ${peso}</p>`);
+ */
+
 
 
 
@@ -63,34 +75,47 @@ let [{punti_fatti}] = squadre;
 let [{falli_subiti}] = squadre;
 let [{nome}] = squadre;
 
-function mathRandom (lista,numero1,numero2){
+for(var i = 0; i < squadre.length; i++){
+
+    let squadra = squadre[i];
     
-    for(var i = 0; i < lista.length; i++){
-        
-        
-        if(numero1 === 0){
-            punti_fatti = (Math.floor(Math.random()*100));
-            //console.log(punti_fatti);
-        }
-        
-        if( numero2 == 0){
-            falli_subiti = (Math.floor(Math.random()*100));
-            //console.log(falli_subiti);
-        }
-
-        punteggio.push({nome,falli_subiti});
-
-    }
+    squadra.punti_fatti = (Math.floor(Math.random()*100));
+    squadra.falli_subiti = (Math.floor(Math.random()*50));
+    
 }
 
-
-let punteggio = [];
-
-
-mathRandom(squadre,punti_fatti,falli_subiti);
+console.log(squadre); 
 
 
-console.log(punteggio);
 
+let newArray = [];
 
+for( i = 0; i < squadre.length; i++){
+
+    let squadra = squadre[i];
+    const {
+        nome,
+        falli_subiti
+    } = squadra;
+    
+    newArray.push({nome,falli_subiti});
+
+}
+
+console.log(newArray);
+
+// console.log(risultato);
+
+ 
+/* Snack 3:
+Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+ */
+var array = [];
+var numero1 = 1;
+var numero2 = 10;
+
+array.forEach((lista,numero_min,numero_max) =>{
+    
+});
 
