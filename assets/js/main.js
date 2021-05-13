@@ -103,7 +103,7 @@ for( i = 0; i < squadre.length; i++){
 }
 
 console.log(newArray);
-
+                                                          
 // console.log(risultato);
 
  
@@ -111,11 +111,15 @@ console.log(newArray);
 Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
 La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
  */
-var array = [];
-var numero1 = 1;
-var numero2 = 10;
 
-array.forEach((lista,numero_min,numero_max) =>{
-    
-});
+const range = (lista,min,max) =>{
+    const newArr = lista.filter ((element, index)=>{
+        return index >= min && index <= max;
+    })
+    return newArr
+}
 
+var array = ['rosso','verde','blu','giallo','nero','arancio','viola','azzurro'];
+
+const risultato = range(array,1, 3);
+console.log(risultato);
